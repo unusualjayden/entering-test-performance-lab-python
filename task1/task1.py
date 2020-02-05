@@ -1,3 +1,6 @@
+import sys
+
+
 def itoBase(nb, base):
     nums = []
     res = []
@@ -10,5 +13,16 @@ def itoBase(nb, base):
         res.append(str(base[l]))
     return "".join(res)
 
-print(itoBase(127482935, "0123456789abcdef"))
 
+def main():
+    usage = ("\033[1m" + "\033[91m" +
+             "Usage:" + " python3 task1.py number base_string" +
+             "\033[0m")
+    if len(sys.argv) != 3:
+        print(usage)
+        exit()
+    print(itoBase(sys.argv[1], sys.argv[2]))
+
+
+if __name__ == "__main__":
+    main()
