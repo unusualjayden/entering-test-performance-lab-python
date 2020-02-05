@@ -1,20 +1,11 @@
+import re, sys
+
 def strcmp(a, b):
-    i = 0
-    j = 0
-    while i != len(b) and j != len(a):
-        if (b[i] == a[j]):
-            i += 1
-            j += 1
-        elif (b[i] == '*'):
-            if (b[i] == '*' and i < len(b)):
-                i += 1
-            if (b[i] != a[j] and j < len(a)):
-                j += 1
-        else:
-            return "KO"
-    return "OK"
-      
-print(strcmp("1234567890", "1*8*"))       
-print(strcmp("1234567890", "1****5*"))       
-print(strcmp("1234567890", "1**5*"))       
-print(strcmp("1234567890", "1*"))       
+    return "OK" if (re.compile(b.replace("*", ".*"))).match(a) else "KO"
+
+
+def main():
+    print(strcmp(sys.argv[1], sys.argv[2]))
+    
+if __name__ == "__main__":
+    main()
