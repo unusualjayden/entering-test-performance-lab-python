@@ -1,5 +1,6 @@
 import math as m
 import sys
+import os
 
 
 def get_distance_between_points(a, b):
@@ -54,7 +55,18 @@ def find_intersection(c, a, b, r):
 
 
 def main():
-    figures = parse_file(sys.argv[1])
+    usage = ("\033[1m" + "\033[91m" +
+             "Usage:" + " python3 task2.py " +
+             "path_to_file" +
+             "\033[0m")
+
+    if len(sys.argv) != 2:
+        print(usage)
+        exit()
+
+    path = os.path.join(os.getcwd(), sys.argv[1])
+    print(path)
+    figures = parse_file(path)
     res = find_intersection(figures["sphere"]["center"],
                             figures["line"][0],
                             figures["line"][1],
