@@ -58,5 +58,5 @@ def create_log(n):
     in_file.close()
 
 
-# create_log(17000)
-create_log(20)
+create_log(17000)
+
