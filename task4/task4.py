@@ -7,6 +7,12 @@ def strcmp(a, b):
 
 
 def main():
+    usage = ("\033[1m" + "\033[91m" +
+             "Usage:" + " python3 task4.py string other_string" +
+             "\033[0m")
+    if (len(sys.argv) != 3):
+        print(usage)
+        exit()
     print(strcmp(sys.argv[1], sys.argv[2]))
 
 
