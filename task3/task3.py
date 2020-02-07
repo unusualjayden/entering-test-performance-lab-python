@@ -4,11 +4,6 @@ import csv
 
 
 class Action:
-    user = ""
-    date = dt.datetime.now()
-    action = ""
-    amount = 0
-
     def __init__(self, user, date, action, amount):
         self.user = user
         self.date = dt.datetime.fromisoformat(date)
@@ -17,9 +12,6 @@ class Action:
 
 
 class Barrel:
-    overall = 0
-    current = 0
-
     def __init__(self, overall, current):
         self.overall = overall
         self.current = current
